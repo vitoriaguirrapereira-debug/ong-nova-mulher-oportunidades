@@ -3,7 +3,14 @@ import react from "@vitejs/plugin-react"
 import tailwindcss from "@tailwindcss/vite"
 import path from "node:path"
 
-import siteConfiguration from "./.figma/make/site.json"
+const siteConfiguration: FigmaSiteConfiguration = {
+  title: "Conectando Oportunidades | ONG Nova Mulher",
+  description:
+    "Cursos, trilhas e guias gratuitos para fortalecer a autonomia profissional e os negócios de mulheres.",
+  language: "pt-BR",
+  robots: { index: true },
+  accessibility: { addBypassLinks: false, ignoreReducedMotion: false },
+}
 
 // Vite config — https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -70,10 +77,11 @@ type FigmaSiteConfiguration = {
   }
   accessibility?: {
     addBypassLinks?: boolean
+    ignoreReducedMotion?: boolean
   }
 }
 
-/** Applies /.figma/make/site.json to the generated document shell. */
+/** Applies the site configuration to the generated document shell. */
 function figmaSiteConfiguration(config: FigmaSiteConfiguration): Plugin {
   function sanitizeHtmlValue(value: string | undefined): string {
     return value?.replace(/[^a-zA-Z0-9_-]/g, "") || ""
