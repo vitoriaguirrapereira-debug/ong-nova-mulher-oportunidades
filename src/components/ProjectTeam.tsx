@@ -26,7 +26,6 @@ export default function ProjectTeam({ compact = false }: Props) {
         {projectTeam.map((member) => (
           <li key={member.name}>
             <strong>{member.name}</strong>
-            {member.role && <span>{member.role}</span>}
           </li>
         ))}
       </ul>
