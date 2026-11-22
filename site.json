@@ -1,0 +1,12 @@
+{
+  "title": "Conectando Oportunidades | ONG Nova Mulher",
+  "description": "Cursos, trilhas e guias gratuitos para fortalecer a autonomia profissional e os negócios de mulheres.",
+  "language": "pt-BR",
+  "robots": {
+    "index": true
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
